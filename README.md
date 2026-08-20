@@ -1,29 +1,67 @@
 # 바이브코딩의 한계를 부수자 — 클로드 코드 실전용 Skills
 
-강의 중 화면에 나오는 **명령과 URL을 그대로 복사**해서 쓰라고 만든 자료입니다.
-직접 타이핑하지 마세요. 오타 하나로 막히는 것이 가장 흔한 실패 원인입니다.
+연세 프리미엄 인강 강의 자료입니다.
+**이 저장소를 받아서 Claude Code로 열면, 그때부터는 명령을 직접 칠 일이 거의 없습니다.**
 
-| 차시 | 자료 |
+## 시작하는 법 — 세 줄
+
+```
+git clone https://github.com/Sweet-Butters/yonsei-claude-code.git
+cd yonsei-claude-code
+claude
+```
+
+Claude Code가 열리면 이렇게 칩니다.
+
+```
+/run-course
+```
+
+끝입니다. **설치할 것도, 복사할 것도 없습니다.**
+스킬이 이 저장소 안(`.claude/skills/`)에 들어 있어서 폴더를 여는 순간 잡힙니다.
+
+`/run-course` 는 이렇게 움직입니다.
+
+1. 지금 어디까지 왔는지 폴더를 보고 판단합니다
+2. 해당 차시의 **발표자료 PDF를 읽고** 무엇을 하는 차시인지 세 줄로 알려 줍니다
+3. 그 차시를 그대로 재현합니다 — 가상환경, 설치, 실행, 결과 확인까지
+4. 끝나면 무엇이 만들어졌는지 말하고 **다음 차시로 갈지 물어봅니다**
+
+## 들어 있는 것
+
+```
+발표자료/         차시별 PDF 6종 — /run-course 가 읽습니다
+1강_commands.md   설치·실행·로그인 명령 전문 (복사 가능)
+2강_commands.md   clone · venv · pip · 크롤링 코드
+3강_commands.md   clone · .env · Gmail 인증 · 실행 · 봇 명령
+코드/             동작 확인된 크롤러 코드
+부록/             본편에서 덜어낸 심화 내용
+.claude/skills/   스킬 5종 (설치 불필요)
+```
+
+## 스킬 5종
+
+| 스킬 | 언제 쓰나 |
 |---|---|
-| 1강 설치 & 첫 실행 | [1강_commands.md](1강_commands.md) |
-| 2강 GitHub에서 가져와 크롤링 | [2강_commands.md](2강_commands.md) |
-| 3강 자동 알림 서비스 만들기 | [3강_commands.md](3강_commands.md) |
+| **`/run-course`** | **강의 전체를 처음부터 재현. 대부분 이것만 쓰면 됩니다** |
+| `/run-crawler` | 2강 크롤러만 다시 돌리고 싶을 때 |
+| `/check-my-bot` | 봇 폴더가 지금 돌 준비가 됐는지 점검 |
+| `/run-mail-bot` | 알림봇을 내 컴퓨터에서 실행 |
+| `/deploy-mail-bot` | 봇을 GitHub Actions로 24시간 돌리기 |
 
-## 부록
+## 스킬이 대신 못 하는 것
 
-| 문서 | 내용 |
+| | 왜 |
 |---|---|
-| [부록/설치옵션과_다른환경.md](부록/설치옵션과_다른환경.md) | 설치 옵션 플래그, macOS · Linux · WSL 설치 |
-| [부록/GitHub_Secrets_등록.md](부록/GitHub_Secrets_등록.md) | 웹 UI 방식(강의) / CLI 방식(참고) |
-| [부록/설치_문제해결.md](부록/설치_문제해결.md) | node 명령 인식 안 됨, 401 오류 등 |
-| [부록/모델과_사고강도.md](부록/모델과_사고강도.md) | `/model` · `/effort` · `resume` · 401 재인증 |
-| [부록/Antigravity.md](부록/Antigravity.md) | Antigravity 로그인과 인증 절차 |
+| Claude Code 로그인 | 계정 인증 |
+| API 키 발급 (Gmail · Gemini · Telegram) | 각 서비스 웹에서 본인이 |
+| GitHub 저장소 만들기 · Secrets 등록 | 계정 권한 |
 
-> 영상에서는 **강사와 같은 환경(Windows + VS Code 터미널)** 하나만 시연합니다.
-> 다른 환경을 쓰신다면 부록 문서를 보고 설치한 뒤 본편을 따라오시면 됩니다.
+**한계가 아니라 정상입니다.** 스킬은 순서를 잡아 주고 빠뜨린 것을 잡아내는 것이지
+계정 일을 대신하는 게 아닙니다.
 
+## 다른 프로젝트에서도 쓰려면
 
-## Skills
-
-4·5강에서 쓰는 Claude Code 스킬은 **[별도 저장소](https://github.com/Sweet-Butters/claude-code-skills)**
-에 있습니다. 받는 법은 [skills.md](skills.md)를 보세요.
+이 저장소 밖에서도 스킬을 쓰고 싶으면
+[claude-code-skills](https://github.com/Sweet-Butters/claude-code-skills) 를 받아 설치하세요.
+내용은 같습니다.

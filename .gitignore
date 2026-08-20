@@ -2,4 +2,5 @@
 __pycache__/
 *.pyc
 quotes*.csv
+.env
 .DS_Store
