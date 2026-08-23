@@ -39,7 +39,7 @@ Claude Code가 열리면 이렇게 칩니다.
 ## 들어 있는 것
 
 ```
-발표자료/         차시별 PDF 6종 — /run-course 가 읽습니다
+발표자료/         차시별 PDF 6종 (사람용) + 차시_개요.md (/run-course 가 읽습니다)
 1강_commands.md   설치·실행·로그인 명령 전문 (복사 가능)
 2강_commands.md   clone · venv · pip · 크롤링 코드
 3강_commands.md   clone · .env · Gmail 인증 · 실행 · 봇 명령
