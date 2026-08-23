@@ -1,85 +1,103 @@
-# 4강 — 스킬, 가져다 쓰고 직접 만들기
-
-2강에서 남의 크롤러를, 3강에서 남의 알림봇을 가져와 썼습니다.
-스킬도 똑같이 남이 만들어 공개해 둔 것을 가져와 씁니다.
-
-아래 명령은 **Claude Code 안에서** 입력합니다. 터미널이 아닙니다.
-슬래시(`/`)로 시작하는 줄이 그렇습니다.
+# 4강 — 자동 알림 서비스 만들기
 
 ## URL
 
 ```
-https://github.com/anthropics/skills
+https://github.com/Sweet-Butters/mail-notifier
+```
+```
+https://console.cloud.google.com/
+```
+```
+https://aistudio.google.com/apikey
+```
+```
+https://t.me/BotFather
 ```
 
-## 1. 스킬 창고 등록하기
-
-저장소를 스킬 창고(마켓플레이스)로 등록합니다. 한 번만 하면 됩니다.
+## 저장소 가져오기
 
 ```
-/plugin marketplace add anthropics/skills
+git clone https://github.com/Sweet-Butters/mail-notifier.git
+```
+```
+cd mail-notifier
 ```
 
-## 2. 문서 스킬 설치하기
-
-PDF · 엑셀 · 워드 · PPT를 다루는 스킬 묶음입니다.
+## 의존 패키지 설치
 
 ```
-/plugin install document-skills@anthropic-agent-skills
+python -m venv .venv
+```
+```
+.venv\Scripts\activate
+```
+```
+pip install -r requirements.txt
 ```
 
-설치가 끝나면 **Claude Code를 새로 켜야** 목록에 잡힙니다.
+## .env 만들기
 
-들어왔는지 확인합니다. `/` 만 누르면 전체 목록이 보입니다.
-
-```
-/
-```
-
-## 3. 설치한 스킬 써 보기
-
-스킬 이름을 부를 필요가 없습니다. 한국어로 시키면 Claude가 알아서 고릅니다.
+저장소에 이미 `.env.example`이 있습니다. 복사해서 `.env`로 이름을 바꾸고 값을 채웁니다.
 
 ```
-이 PDF에서 표만 뽑아 엑셀로 만들어줘
+copy .env.example .env
 ```
 
-## 4. 설치 전에 확인할 것
-
-남의 스킬을 설치하는 것은 **남이 쓴 문서를 내 컴퓨터에서 돌리는 일**입니다.
-세 가지만 보면 됩니다.
-
-| 무엇을 | 어떻게 |
-|---|---|
-| 무엇을 하나 | `SKILL.md` 를 열어 읽는다 |
-| 언제 고쳤나 | 저장소의 최근 갱신 날짜를 본다 |
-| 무엇을 건드리나 | 파일을 지우거나 밖으로 보내지 않는지 |
-
-판단이 서지 않으면 Claude에게 읽혀 봅니다.
+채울 항목은 **세 개**입니다.
 
 ```
-이 SKILL.md 가 무슨 일을 하는지, 위험한 부분은 없는지 알려줘
+TELEGRAM_TOKEN=
+TELEGRAM_CHAT_ID=
+GEMINI_API_KEY=
 ```
 
-## 5. 내 스킬 만들기
-
-우리 강의 저장소에도 스킬이 딸려 있습니다. 같은 방식으로 내 것을 만듭니다.
-
-```
-지금 폴더를 읽고, 이 프로젝트를 처음 보는 사람이 한 번에 실행할 수 있는
-skill을 .claude/skills/ 아래에 만들어줘. description에는 "언제 쓰는지"도 넣어줘.
-```
-
-앞서 받은 `skill-creator` 스킬을 써도 됩니다.
+> `.env`는 **절대 GitHub에 올리지 않습니다.** 이 저장소의 `.gitignore`에는
+> `.env` · `credentials.json` · `token.json`이 이미 들어 있습니다. 확인만 하세요.
 
 ```
-skill-creator 로 스킬 하나 만들어줘
+type .gitignore
 ```
 
-## 6. 만든 스킬 확인하기
+## Gmail 인증 (한 번만)
 
 ```
-ls .claude/skills
+python auth_gmail.py
 ```
 
-Claude Code를 새로 켠 뒤 `/` 를 눌러 목록에 보이는지 확인합니다.
+요청하는 권한은 **`gmail.readonly` 하나뿐**입니다 — 메일을 읽기만 하고 쓰지 못합니다.
+브라우저가 열리면 계정을 선택하고 권한을 승인합니다. 끝나면 `token.json`이 생깁니다.
+"이 앱은 Google에서 확인하지 않았습니다" 화면이 나오면
+**고급 → (앱 이름)(안전하지 않음)으로 이동**을 눌러 진행합니다.
+
+## 실행
+
+```
+python main.py
+```
+
+## 봇 명령 (텔레그램에서 입력)
+
+```
+/watch 요리일정안내
+```
+```
+/list
+```
+```
+/block
+```
+```
+/quota
+```
+```
+/lang en
+```
+
+> GitHub Secrets 등록은 [부록/GitHub_Secrets_등록.md](부록/GitHub_Secrets_등록.md)를 보세요.
+> 강의에서는 **웹 UI 방식**으로 진행합니다.
+
+---
+
+> 이 문서의 파일 이름·환경변수·Secrets 이름은 **저장소 실물로 대조해 확정**했습니다.
+> (`Sweet-Butters/mail-notifier`, 2026-08-20 확인)
