@@ -3,6 +3,15 @@
 연세 프리미엄 인강 강의 자료입니다.
 **이 저장소를 받아서 Claude Code로 열면, 그때부터는 명령을 직접 칠 일이 거의 없습니다.**
 
+## 미리 있어야 하는 것
+
+| | 확인 | 없으면 |
+|---|---|---|
+| git | `git --version` | https://git-scm.com/downloads |
+| Node.js | `node -v` | https://nodejs.org/ |
+
+**git이 없으면 아래 첫 줄부터 막힙니다.** 윈도우에는 기본으로 깔려 있지 않습니다.
+
 ## 시작하는 법 — 세 줄
 
 ```
@@ -34,6 +43,7 @@ Claude Code가 열리면 이렇게 칩니다.
 1강_commands.md   설치·실행·로그인 명령 전문 (복사 가능)
 2강_commands.md   clone · venv · pip · 크롤링 코드
 3강_commands.md   clone · .env · Gmail 인증 · 실행 · 봇 명령
+4강_commands.md   남의 스킬 받기 · 내 스킬 만들기
 코드/             동작 확인된 크롤러 코드
 부록/             본편에서 덜어낸 심화 내용
 .claude/skills/   스킬 5종 (설치 불필요)

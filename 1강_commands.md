@@ -11,6 +11,25 @@ https://nodejs.org/
 ```
 https://github.com/signup
 ```
+```
+https://git-scm.com/downloads
+```
+
+## git
+
+`GitHub`은 웹사이트, `git`은 내 컴퓨터에 까는 프로그램입니다. **둘은 다릅니다.**
+2강부터 남의 코드를 `git clone`으로 받아 오므로 git이 없으면 거기서 막힙니다.
+
+설치 여부 확인.
+
+```
+git --version
+```
+
+버전이 안 나오면 위 `git-scm.com/downloads`에서 받아 설치합니다.
+윈도우는 내려받은 설치 파일을 **기본값 그대로** 넘기면 됩니다.
+
+> 설치 후 **터미널을 새로 열어야** 반영됩니다.
 
 ## Claude Code
 
