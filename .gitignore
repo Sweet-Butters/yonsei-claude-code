@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+quotes*.csv
+.env
+.DS_Store
+
+# 3강에서 받는 봇 저장소 (중첩 저장소)
+mail-notifier/
+
+# 2강에서 받는 오픈소스 저장소 (중첩 저장소)
+Scrapling/
