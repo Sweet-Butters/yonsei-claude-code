@@ -43,11 +43,12 @@ Claude Code가 열리면 이렇게 칩니다.
 | OT | 오리엔테이션 |
 | 1강 | 설치 & 실행 |
 | 2강 | GitHub & 크롤링 |
-| 3강 | Skill 갖고오기 & 만들기 |
-| 4강 | Telegram 알림봇 만들기 |
-| 5강 | Telegram 알림봇 배포 & 실행 |
+| 3강 | Telegram 알림봇 만들기 |
+| 4강 | Claude Code Skills |
+| 5강 | 24시간 자동 실행 & 운영 |
 
-한 차시는 6~8분짜리 2편으로 나뉩니다. **3강까지는 계정 없이 끝까지 따라갈 수 있습니다.**
+OT 1편 + 5강 5편, 한 편 10분 내외입니다. 5주 전체가 하나의 프로젝트(Gmail → Telegram 알림봇)로 이어집니다.
+**2강까지는 계정 없이 끝까지 따라갈 수 있습니다.** 3강부터는 API 키 3종이 필요합니다.
 
 ## 들어 있는 것
 
@@ -55,8 +56,9 @@ Claude Code가 열리면 이렇게 칩니다.
 발표자료/         차시별 PDF 6종 (사람용) + 차시_개요.md (/run-course 가 읽습니다)
 1강_commands.md   설치·실행·로그인 명령 전문 (복사 가능)
 2강_commands.md   clone · venv · pip · 크롤링 코드
-3강_commands.md   남의 스킬 받기 · 내 스킬 만들기
-4강_commands.md   clone · .env · Gmail 인증 · 실행 · 봇 명령
+3강_commands.md   clone · .env · Gmail 인증 · 로컬 첫 실행
+4강_commands.md   남의 스킬 받기 · 알림봇에 내 스킬 만들기
+5강_commands.md   push · Secrets · cronjob 워크플로 · 봇 명령
 코드/             동작 확인된 크롤러 코드
 부록/             본편에서 덜어낸 심화 내용
 .claude/skills/   스킬 5종 (설치 불필요)
@@ -68,9 +70,9 @@ Claude Code가 열리면 이렇게 칩니다.
 |---|---|
 | **`/run-course`** | **강의 전체를 처음부터 재현. 대부분 이것만 쓰면 됩니다** |
 | `/run-crawler` | 2강 크롤러만 다시 돌리고 싶을 때 |
-| `/check-my-bot` | 봇 폴더가 지금 돌 준비가 됐는지 점검 |
-| `/run-mail-bot` | 알림봇을 내 컴퓨터에서 실행 |
-| `/deploy-mail-bot` | 봇을 GitHub Actions로 24시간 돌리기 |
+| `/check-my-bot` | 봇 폴더가 지금 돌 준비가 됐는지 점검 (4강 예시) |
+| `/run-mail-bot` | 알림봇을 내 컴퓨터에서 실행 (4강 예시) |
+| `/deploy-mail-bot` | 봇을 GitHub Actions로 24시간 돌리기 (5강) |
 
 ## 스킬이 대신 못 하는 것
 
