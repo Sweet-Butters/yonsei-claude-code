@@ -26,12 +26,25 @@ cd mail-notifier
 
 ## 의존 패키지 설치
 
+Windows:
+
 ```
 python -m venv .venv
 ```
 ```
 .venv\Scripts\activate
 ```
+
+macOS · Linux:
+
+```
+python3 -m venv .venv
+```
+```
+source .venv/bin/activate
+```
+
+활성화한 뒤에는 Mac 에서도 `python` · `pip` 그대로 쓰면 됩니다.
 ```
 pip install -r requirements.txt
 ```

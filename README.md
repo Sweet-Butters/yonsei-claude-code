@@ -10,7 +10,7 @@
 | | 확인 | 없으면 |
 |---|---|---|
 | git | `git --version` | https://git-scm.com/downloads |
-| Node.js | `node -v` | https://nodejs.org/ |
+| Python | Windows `python --version` · Mac `python3 --version` | https://www.python.org/downloads/ (Mac 은 git 설치 때 함께 깔림) |
 
 **git이 없으면 아래 첫 줄부터 막힙니다.** 윈도우에는 기본으로 깔려 있지 않습니다.
 

@@ -46,8 +46,13 @@ git status --short
 python -m venv .venv
 ```
 
+macOS · Linux 에서 `python` 이 없다고 나오면 `python3 -m venv .venv` 로 만든다.
+
 활성화 명령은 OS에 맞게 안내하고 **사용자가 직접 실행**하게 한다.
 Windows `.venv\Scripts\activate` · macOS·Linux `source .venv/bin/activate`
+
+Claude 가 대신 실행할 때는 활성화가 다음 명령까지 이어지지 않는다. 이 스킬의 `python` 은 모두
+`.venv` 의 파이썬으로 바꿔 실행한다 — Windows `.venv\Scripts\python.exe`, macOS·Linux `.venv/bin/python`.
 
 ```
 python -m pip install -r requirements.txt

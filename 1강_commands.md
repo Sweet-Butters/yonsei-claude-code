@@ -6,7 +6,7 @@
 https://code.visualstudio.com/
 ```
 ```
-https://nodejs.org/
+https://www.python.org/downloads/
 ```
 ```
 https://github.com/signup
@@ -30,20 +30,33 @@ git --version
 윈도우는 내려받은 설치 파일을 **기본값 그대로** 넘기면 됩니다.
 
 > 설치 후 **터미널을 새로 열어야** 반영됩니다.
+>
+> **Mac** 은 터미널에서 `git --version` 을 처음 치면 「개발자 도구 설치」 창이 뜹니다.
+> `설치` 를 누르면 git 과 `python3` 가 함께 깔립니다. Mac 에서는 `python` 대신 **`python3`** 로 칩니다.
 
 ## Claude Code
 
-설치 여부 확인 — Node.js가 먼저 있어야 합니다.
+Node.js 는 필요 없습니다. 내 컴퓨터에 맞는 **한 줄**만 복사해 붙여넣습니다.
+
+macOS (터미널):
 
 ```
-node -v
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-설치.
+Windows (PowerShell):
 
 ```
-npm install -g @anthropic-ai/claude-code
+irm https://claude.ai/install.ps1 | iex
 ```
+
+설치 확인.
+
+```
+claude --version
+```
+
+> Claude Code 는 **Pro 이상 구독**이 필요합니다. 무료 요금제로는 쓸 수 없습니다.
 
 > 설치 후 **터미널을 새로 열어야** 반영됩니다.
 

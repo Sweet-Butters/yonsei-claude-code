@@ -45,16 +45,19 @@ ls
 ### 1강 — 환경이 준비됐는지 확인
 
 ```
-node -v
-```
-```
 python --version
+```
+macOS · Linux 에서는 `python` 이 없고 `python3` 만 있는 것이 정상이다. 그때는 이것으로 확인한다.
+
+```
+python3 --version
 ```
 ```
 git --version
 ```
 
-셋 다 나오면 통과. 안 나오는 것이 있으면 `1강_commands.md` 의 설치 URL을 알려 주고 **거기서 멈춘다.**
+파이썬(둘 중 하나)과 git 이 나오면 통과. Node.js 는 이 강의에 필요 없다.
+Mac 에서 `git` 이나 `python3` 를 처음 치면 「개발자 도구 설치」 창이 뜰 수 있다 — 사용자가 `설치` 를 누르게 안내하고, 끝나면 다시 확인한다. 안 나오는 것이 있으면 `1강_commands.md` 의 설치 URL을 알려 주고 **거기서 멈춘다.**
 설치는 사용자가 직접 한다.
 
 > Claude Code 로그인(`/login`)과 Antigravity 설치는 **계정이 필요해 대신 못 한다.**

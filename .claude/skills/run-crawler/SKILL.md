@@ -17,6 +17,8 @@ description: 2강에서 만든 scrapling 크롤러를 점검하고 실행해 결
 python --version
 ```
 
+macOS · Linux 에서 `python` 이 없다고 나오면 `python3` 를 쓴다. 아래 명령의 `python` 도 똑같이 `python3` 로 바꾼다.
+
 `.venv` 폴더가 없으면 만든다.
 
 ```
@@ -25,6 +27,7 @@ python -m venv .venv
 
 활성화는 사용자의 OS에 맞춰 안내한다 — Windows는 `.venv\Scripts\activate`, macOS·Linux는 `source .venv/bin/activate`.
 **활성화는 사용자가 직접 하도록 안내하고**, 이후 명령은 `.venv`의 파이썬을 직접 지정해 실행한다.
+아래 `<PY>` 는 Windows 면 `.venv\Scripts\python.exe`, macOS · Linux 면 `.venv/bin/python` 이다.
 
 ## 3. scrapling 설치 확인
 

@@ -35,6 +35,12 @@ git log --oneline -5
 python -m venv .venv
 ```
 
+Mac 은 `python` 대신 `python3`:
+
+```
+python3 -m venv .venv
+```
+
 Windows에서 활성화:
 
 ```
